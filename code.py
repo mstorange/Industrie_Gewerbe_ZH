@@ -72,6 +72,9 @@ if submitted:
             return 'jung'
         else:
             return 'alt'
+
+    test = igbebaut[igbebaut['egrid']=='CH649676778551']
+    st.write(test)
     
     gebproparz['alterskat'] = gebproparz['baujahr_gebaeude_kod'].apply(lambda x: altersstufe(x))
     

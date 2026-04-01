@@ -145,10 +145,7 @@ if submitted:
     
     # Gebäudestring gestalten
     def hoverstring_gebäude(row):
-        # art = row['klasse']
         egid = int(row['egid'])
-        # baujahr = row['Baujahr']
-        # wf = round(row['wohnflaeche'], 2)
         centroid = row['geometry'].centroid
         gwr = f'https://map.geo.admin.ch/#/map?lang=de&center={centroid.x},{centroid.y}&z=13&topic=ech&layers=ch.swisstopo.zeitreihen@year=1864,f;ch.bfs.gebaeude_wohnungs_register;ch.bav.haltestellen-oev,f;ch.swisstopo.swisstlm3d-wanderwege,f;ch.vbs.schiessanzeigen,f;ch.astra.wanderland-sperrungen_umleitungen,f&bgLayer=ch.swisstopo.pixelkarte-farbe'
         gwr_hyperlink = f'<a href={gwr}>GWR</a>'

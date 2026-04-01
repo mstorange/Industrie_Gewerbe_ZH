@@ -13,7 +13,6 @@ from streamlit_folium import st_folium
 import math
 from folium.plugins import Search, MiniMap
 import branca
-from IPython.display import display, IFrame
 
 st.title("Industrie- und Gewerbeparzellen im Kanton Zürich")
 st.write("Diese App zeigt die Industrie- und Gewerbeparzellen im Kanton Zürich. Du kannst die Parzellen nach Fläche, Baujahr der Gebäude und ÖV-Güteklasse filtern und auf einer interaktiven Karte anzeigen lassen.")

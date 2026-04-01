@@ -16,9 +16,13 @@ from io import BytesIO
 from folium.plugins import Search, MiniMap
 import branca
 
-def wide_space_default():
-    st.set_page_config(layout='wide')
-wide_space_default()
+
+st.set_page_config(
+    page_title="My App",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    theme={"base": "light"}  # or "dark"
+)
 
 st.title("Industrie- und Gewerbeparzellen im Kanton Zürich")
 st.write("Diese App zeigt die Industrie- und Gewerbeparzellen im Kanton Zürich. Du kannst die Parzellen nach Fläche, Baujahr der Gebäude und ÖV-Güteklasse filtern und auf einer interaktiven Karte anzeigen lassen.")

@@ -20,8 +20,7 @@ import branca
 st.set_page_config(
     page_title="My App",
     layout="wide",
-    initial_sidebar_state="expanded",
-    theme={"base": "light"}  # or "dark"
+    initial_sidebar_state="expanded"
 )
 
 st.title("Industrie- und Gewerbeparzellen im Kanton Zürich")

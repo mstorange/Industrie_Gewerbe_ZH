@@ -81,9 +81,9 @@ if submitted:
     # error ist bei parzellalter[x] wenn x == 'CH649676778551' --> vlt ist es ein Problem der dtypes
 
     if 'CH649676778551' in igbebaut['egrid'].tolist():
-        print('Die Parzelle CH649676778551 ist im igbebaut-DF')
+        st.write('Die Parzelle CH649676778551 ist im igbebaut-DF')
     else:
-        print('Die Parzelle CH649676778551 ist nicht im igbebaut-DF')
+        st.write('Die Parzelle CH649676778551 ist nicht im igbebaut-DF')
     
     igbebaut['alterskat'] = igbebaut['egrid'].apply(lambda x: parzellalter[x])
     

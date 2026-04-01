@@ -337,7 +337,7 @@ if submitted:
         z-index: 1000;
     ">
         <h3 style="margin-top: 0; font-size:10px; color:#000; background:#fff; border:1px solid #888; display:none">Info</h3>
-        <p>Die Karte zeigt alle Zürcher Industrie und Gewerbe-Parzellen, welche die folgenden Bedingungen erfüllen:<br> - Parzellfläche von {flmin} bis {flmax} m2<br> - ÖV-Güteklasse mindestens {guteklasse_min_wert}<br> - Neuere Gebäude ab Baujahr {jahrmax} oder jünger</p>
+        <p>Die Karte zeigt alle Zürcher Industrie und Gewerbe-Parzellen, welche die folgenden Bedingungen erfüllen:<br> - Parzellfläche von {flmin} bis {flmax} m2<br> - ÖV-Güteklasse mindestens {guteklasse_min_wert}<br> - BMZ (min.) ab {bmz_min)<br> - Höhe (min) ab {hoehe_min}<br> - Neuere Gebäude ab Baujahr {jahrmax} oder jünger</p>
     </div>
     '''
     # farbenfrei = dict({'Basisfiliale':'#11782c', 'Metropolfiliale':'#65b57b', 'Höhe undefiniert, evtl. Metropolfiliale':'#a1ffb8', 'keine Filiale möglich':'#8c3252', 'Höhe undefiniert, prüfen, ob Filiale Platz hätte':'black'})

@@ -398,12 +398,12 @@ if submitted:
     def to_excel(df):
         buffer = BytesIO()
         with pd.ExcelWriter(buffer, engine='openpyxl') as writer:
-            igbebaut.to_excel(writer, index=False)
+            df.to_excel(writer, index=False)
         return buffer.getvalue()
     
     st.download_button(
         label="📥 Download Excel der bebauten Parzellen",
-        data=to_excel(df),
+        data=to_excel(igbebaut),
         file_name="data.xlsx",
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )

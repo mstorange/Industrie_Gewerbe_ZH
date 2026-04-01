@@ -216,11 +216,11 @@ if submitted:
            'max. Höhe', 'max. Firsthöhe', 'max. Gewerbeanteil', 'max. Vollgeschosse', 'BMZ (max.)','Baumasse (max.)',
            'Anteil ÖV-Güteklasse', 'Güteklasse (main)', 'Google Maps'])
     
-    hoverinfo2 = folium.GeoJsonTooltip(fields=['parzellenNR', 'zone', 'Baumasse_max', 'alterskat', 'GK_main'], 
-    aliases=['Parzellen-Nr.', 'Zone','Baumasse (max.)', 'Alterskategorie (Parzelle)', 'Güteklasse (main)'])
+    hoverinfo2 = folium.GeoJsonTooltip(fields=['parzellenNR', 'zone', 'flaeche_parzelle', 'alterskat', 'GK_main'], 
+    aliases=['Parzellen-Nr.', 'Zone','Fläche', 'Alterskategorie (Parzelle)', 'Güteklasse (main)'])
     
-    hoverinfo = folium.GeoJsonTooltip(fields=['parzellenNR', 'zone', 'Baumasse_max', 'GK_main'], 
-    aliases=['Parzellen-Nr.', 'Zone','Baumasse (max.)', 'Güteklasse (main)'])
+    hoverinfo = folium.GeoJsonTooltip(fields=['parzellenNR', 'zone', 'flaeche_parzelle', 'GK_main'], 
+    aliases=['Parzellen-Nr.', 'Zone','Fläche', 'Güteklasse (main)'])
     
     info_gebaeude = folium.GeoJsonPopup(fields=['egid', 'municipalityName', 'Baujahr','status','kategorie', 'klasse', 'wohnfläche_gebäude', 'Links'], 
                                         aliases=['EGID', 'Gemeinde', 'Baujahr','Status','Kategorie','Klasse','Wohnfläche','Links'])

@@ -16,6 +16,10 @@ from io import BytesIO
 from folium.plugins import Search, MiniMap
 import branca
 
+def wide_space_default():
+    st.set_page_config(layout='wide')
+wide_space_default()
+
 st.title("Industrie- und Gewerbeparzellen im Kanton Zürich")
 st.write("Diese App zeigt die Industrie- und Gewerbeparzellen im Kanton Zürich. Du kannst die Parzellen nach Fläche, Baujahr der Gebäude und ÖV-Güteklasse filtern und auf einer interaktiven Karte anzeigen lassen.")
 
@@ -332,7 +336,7 @@ if submitted:
         font-size: 9px;
         z-index: 1000;
     ">
-        <h3 style="margin-top: 0;">Info</h3>
+        <h3 style="margin-top: 0; font-size:10px; color:#000; background:#fff">Info</h3>
         <p>Die Karte zeigt alle Zürcher Industrie und Gewerbe-Parzellen, welche die folgenden Bedingungen erfüllen:<br> - Parzellfläche von {flmin} bis {flmax} m2<br> - ÖV-Güteklasse mindestens {guteklasse_min_wert}<br> - Neuere Gebäude ab Baujahr {jahrmax} oder jünger</p>
     </div>
     '''

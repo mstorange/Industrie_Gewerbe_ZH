@@ -84,10 +84,6 @@ if submitted:
 
     # error ist bei parzellalter[x] wenn x == 'CH649676778551' --> vlt ist es ein Problem der dtypes
 
-    if 'CH845106779770' in igbebaut['egrid'].tolist():
-        st.write('Die Parzelle CH845106779770 ist im igbebaut-DF')
-    else:
-        st.write('Die Parzelle CH845106779770 ist nicht im igbebaut-DF')
     
     igbebaut['alterskat'] = igbebaut['egrid'].apply(lambda x: parzellalter[x])
     
@@ -336,7 +332,7 @@ if submitted:
         font-size: 9px;
         z-index: 1000;
     ">
-        <h3 style="margin-top: 0; font-size:10px; color:#000; background:#fff">Info</h3>
+        <h3 style="margin-top: 0; font-size:10px; color:#000; background:#fff; border:1px solid #888; display:none">Info</h3>
         <p>Die Karte zeigt alle Zürcher Industrie und Gewerbe-Parzellen, welche die folgenden Bedingungen erfüllen:<br> - Parzellfläche von {flmin} bis {flmax} m2<br> - ÖV-Güteklasse mindestens {guteklasse_min_wert}<br> - Neuere Gebäude ab Baujahr {jahrmax} oder jünger</p>
     </div>
     '''

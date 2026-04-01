@@ -26,12 +26,12 @@ response = requests.get(url1)
 igfrei = gpd.read_parquet(BytesIO(response.content))
 
 #igbebaut = gpd.read_parquet('https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/igbebaut2026.parquet')
-url2 = 'https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/igfrei2026.parquet'
+url2 = 'https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/igbebaut2026.parquet'
 response2 = requests.get(url2)
 igbebaut = gpd.read_parquet(BytesIO(response2.content))
 
 #gwr_grundrisse = gpd.read_parquet('https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/gwr_grundrisse2026.parquet')
-url3 = 'https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/igfrei2026.parquet'
+url3 = 'https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/gwr_grundrisse2026.parquet'
 response3 = requests.get(url3)
 gwr_grundrisse = gpd.read_parquet(BytesIO(response3.content))
 

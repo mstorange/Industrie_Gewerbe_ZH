@@ -73,7 +73,7 @@ if submitted:
         else:
             return 'alt'
 
-    test = igbebaut[igbebaut['egrid']=='CH649676778551']
+    test = str(igbebaut[igbebaut['egrid']=='CH649676778551'].index)
     st.write(test)
     
     gebproparz['alterskat'] = gebproparz['baujahr_gebaeude_kod'].apply(lambda x: altersstufe(x))

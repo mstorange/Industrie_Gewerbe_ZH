@@ -39,19 +39,18 @@ bfsnr = pd.read_json("https://raw.githubusercontent.com/mstorange/Industrie_Gewe
 
 submitted = st.button("Anwenden")
 
-if submitted:
 
-    alleguteklassen = sorted(igfrei.GK_main.unique(), reverse=True)
+alleguteklassen = sorted(igfrei.GK_main.unique(), reverse=True)
     
     # hier nun die Flächenfilter und die Baujahrfilter für die pIGbebaut
-    with st.expander("Filter setzen: "):
-        slider_flaeche = st.slider(label="Fläche der Parzelle (m2)", min_value=0, max_value=30000, value=(4000, 10000), step=500)
-        slider_altermin = st.slider(label="Ab welchem Alter zählt ein Gebäude als alt?", min_value=0, max_value=100, value=36, step=1)
-        slider_bmzmin = st.slider(label="BMZ (min.)", min_value=0, max_value=15, value=3, step=1)
-        slider_hoehemin = st.slider(label="Mindesthöhe der Gebäude (m)", min_value=0, max_value=20, value=6, step=1)
-        guteklasse_min_wert = st.text_input(label="Güteklasse (min.), Auswahl: [F, E, D, C, B, A]", value='B', key='gk_min')
+with st.expander("Filter setzen: "):
+    slider_flaeche = st.slider(label="Fläche der Parzelle (m2)", min_value=0, max_value=30000, value=(4000, 10000), step=500)
+    slider_altermin = st.slider(label="Ab welchem Alter zählt ein Gebäude als alt?", min_value=0, max_value=100, value=36, step=1)
+    slider_bmzmin = st.slider(label="BMZ (min.)", min_value=0, max_value=15, value=3, step=1)
+    slider_hoehemin = st.slider(label="Mindesthöhe der Gebäude (m)", min_value=0, max_value=20, value=6, step=1)
+    guteklasse_min_wert = st.text_input(label="Güteklasse (min.), Auswahl: [F, E, D, C, B, A]", value='B', key='gk_min')
     
-    
+if submitted:  
     flmin = slider_flaeche[0]
     flmax = slider_flaeche[1]
     altermin = slider_altermin

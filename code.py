@@ -79,8 +79,6 @@ if submitted:
     parzellalter = dict(zip(gebproparz['egrid'].tolist(), gebproparz['alterskat'].tolist()))
 
     # error ist bei parzellalter[x] wenn x == 'CH649676778551' --> vlt ist es ein Problem der dtypes
-    st.write(type(list(parzellalter.keys())[0]))
-    st.write(type(igbebaut['egrid'][0]))
 
     if 'CH649676778551' in igbebaut['egrid'].tolist():
         print('Die Parzelle CH649676778551 ist im igbebaut-DF')

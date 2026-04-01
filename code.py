@@ -389,3 +389,21 @@ if submitted:
     m.get_root().html.add_child(folium.Element(title_html))
     
     st_data = st_folium(m, height = 500, width = 1300, returned_objects=[])
+
+
+    st.write("Hier die Datensätze runterladen")
+    
+    from io import BytesIO
+    
+    def to_excel(df):
+        buffer = BytesIO()
+        with pd.ExcelWriter(buffer, engine='openpyxl') as writer:
+            igbebaut.to_excel(writer, index=False)
+        return buffer.getvalue()
+    
+    st.download_button(
+        label="📥 Download Excel der bebauten Parzellen",
+        data=to_excel(df),
+        file_name="data.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )

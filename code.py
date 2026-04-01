@@ -327,7 +327,8 @@ if submitted:
         bottom: 10px; 
         left: 10px; 
         width: 180px; 
-        height: auto; 
+        height: auto;
+        color: black;
         padding: 10px;
         background-color: white; 
         border-radius: 0px;

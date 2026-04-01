@@ -18,9 +18,9 @@ st.title("Industrie- und Gewerbeparzellen im Kanton Zürich")
 st.write("Diese App zeigt die Industrie- und Gewerbeparzellen im Kanton Zürich. Du kannst die Parzellen nach Fläche, Baujahr der Gebäude und ÖV-Güteklasse filtern und auf einer interaktiven Karte anzeigen lassen.")
 
 gebproparz = pd.read_json('https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/gebjahre_pro_parz2026.json')
-igfrei = gpd.read_parquet('https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/igfrei2026.parquet')
-igbebaut = gpd.read_parquet('https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/igbebaut2026.parquet')
-gwr_grundrisse = gpd.read_parquet('https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/gwr_grundrisse2026.parquet')
+igfrei = gpd.read_parquet('https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/igfrei2026.parquet', filesystem='http')
+igbebaut = gpd.read_parquet('https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/igbebaut2026.parquet', filesystem='http')
+gwr_grundrisse = gpd.read_parquet('https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/gwr_grundrisse2026.parquet', filesystem='http')
 bfsnr = pd.read_json("https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/BFSNummern.json")
 
 

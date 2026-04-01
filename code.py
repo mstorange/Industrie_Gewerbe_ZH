@@ -400,10 +400,48 @@ if submitted:
         with pd.ExcelWriter(buffer, engine='openpyxl') as writer:
             df.to_excel(writer, index=False)
         return buffer.getvalue()
+
+    igbebaut2 = igbebaut.rename(columns = {
+    'egrid': 'EGRID',
+    'gemeinde': 'Gemeinde',
+    'parzellenNR': 'Parzellen-Nr.',
+    'flaeche_parzelle': 'Fläche',
+    'flaeche_ohne_str': 'Fläche ohne Strassen',
+    'zone': 'Zone',
+    'Gesamthoehe': 'Gesamthöhe',
+    'hoehe_max': 'Höhe (max.)',
+    'Gewerbeanteil_Max': 'Gewerbeanteil (max.)',
+    'Vollgeschosse_Max': 'Vollgeschosse (max)',
+    'BMZmax': 'BMZ (max.)',
+    'Baumasse_max': 'Baumasse (max.)',
+    'guteklasse_anteile_pretty': 'Güteklasse-Anteile',
+    'alterskat': 'Alterskategorie'})
     
     st.download_button(
         label="📥 Download Excel der bebauten Parzellen",
-        data=to_excel(igbebaut),
+        data=to_excel(igbebaut2[['EGRID','Gemeinde','Parzellen-Nr.','Fläche','Fläche ohne Strassen','Zone','Gesamthöhe','Höhe (max.)','Gewerbeanteil (max.)','Vollgeschosse (max)','BMZ (max.)','Baumasse (max.)','Güteklasse-Anteile','Alterskategorie']]),
+        file_name="data.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
+
+    igfrei2 = igfrei.rename(columns = {
+    'egrid': 'EGRID',
+    'gemeinde': 'Gemeinde',
+    'parzellenNR': 'Parzellen-Nr.',
+    'flaeche_parzelle': 'Fläche',
+    'flaeche_ohne_str': 'Fläche ohne Strassen',
+    'zone': 'Zone',
+    'Gesamthoehe': 'Gesamthöhe',
+    'hoehe_max': 'Höhe (max.)',
+    'Gewerbeanteil_Max': 'Gewerbeanteil (max.)',
+    'Vollgeschosse_Max': 'Vollgeschosse (max)',
+    'BMZmax': 'BMZ (max.)',
+    'Baumasse_max': 'Baumasse (max.)',
+    'guteklasse_anteile_pretty': 'Güteklasse-Anteile'})
+    
+    st.download_button(
+        label="📥 Download Excel der unbebauten Parzellen",
+        data=to_excel(igfrei2[['EGRID','Gemeinde','Parzellen-Nr.','Fläche','Fläche ohne Strassen','Zone','Gesamthöhe','Höhe (max.)','Gewerbeanteil (max.)','Vollgeschosse (max)','BMZ (max.)','Baumasse (max.)','Güteklasse-Anteile']]),
         file_name="data.xlsx",
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )

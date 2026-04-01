@@ -11,6 +11,8 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 from streamlit_folium import st_folium
 import math
+import requests
+from io import BytesIO
 from folium.plugins import Search, MiniMap
 import branca
 
@@ -18,9 +20,21 @@ st.title("Industrie- und Gewerbeparzellen im Kanton Zürich")
 st.write("Diese App zeigt die Industrie- und Gewerbeparzellen im Kanton Zürich. Du kannst die Parzellen nach Fläche, Baujahr der Gebäude und ÖV-Güteklasse filtern und auf einer interaktiven Karte anzeigen lassen.")
 
 gebproparz = pd.read_json('https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/gebjahre_pro_parz2026.json')
-igfrei = gpd.read_parquet('https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/igfrei2026.parquet', filesystem='https')
-igbebaut = gpd.read_parquet('https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/igbebaut2026.parquet', filesystem='https')
-gwr_grundrisse = gpd.read_parquet('https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/gwr_grundrisse2026.parquet', filesystem='https')
+#igfrei = gpd.read_parquet('https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/igfrei2026.parquet')
+url1 = 'https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/igfrei2026.parquet'
+response = requests.get(url1)
+igfrei = gpd.read_parquet(BytesIO(response.content))
+
+#igbebaut = gpd.read_parquet('https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/igbebaut2026.parquet')
+url2 = 'https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/igfrei2026.parquet'
+response2 = requests.get(url2)
+igbebaut = gpd.read_parquet(BytesIO(response2.content))
+
+#gwr_grundrisse = gpd.read_parquet('https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/gwr_grundrisse2026.parquet')
+url3 = 'https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/igfrei2026.parquet'
+response3 = requests.get(url3)
+gwr_grundrisse = gpd.read_parquet(BytesIO(response3.content))
+
 bfsnr = pd.read_json("https://raw.githubusercontent.com/mstorange/Industrie_Gewerbe_ZH/main/BFSNummern.json")
 
 

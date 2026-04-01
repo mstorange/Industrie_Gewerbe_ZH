@@ -348,7 +348,7 @@ if submitted:
     <div style="position: fixed; 
          bottom: 200px; left: 10px; width: 300px; height: 80px; 
          border:0px solid grey; z-index:9999; font-size:14px;
-         background-color:white; opacity: 0.95;">
+         background-color:white; opacity: 0.95;color:black;">
          &nbsp; <b>Legende</b> <br>
          &nbsp; unbebaute Parzelle &nbsp; <i class="fa fa-square" style="color:#79AE6F"></i><br>
          &nbsp; bebaute Parzelle mit alten Gebäuden &nbsp; <i class="fa fa-square" style="color:#2A3E85"></i><br>

@@ -183,12 +183,12 @@ if submitted:
     
     # Karte
     def get_gmaps_links(row):
-    centroid = row['geometry'].centroid
-    maps = f'https://www.google.com/maps/@{centroid.y},{centroid.x},181m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI0MTExNy4wIKXMDSoASAFQAw%3D%3D'
-    streetview = f'https://www.google.com/maps/@{centroid.y},{centroid.x},3a,75y,294.89h,90.12t/data=!3m7!1e1!3m5!1s1K-zJxC2RQnb8bAq_J-P9g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.11663989885830972%26panoid%3D1K-zJxC2RQnb8bAq_J-P9g%26yaw%3D294.8880644977118!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExNy4wIKXMDSoASAFQAw%3D%3D'
-    maps_hyperlink = f'<a href={maps}>GoogleMaps</a>'
-    streetview_hyperlink = f'<a href={streetview}>StreetView</a>'
-    return maps_hyperlink
+        centroid = row['geometry'].centroid
+        maps = f'https://www.google.com/maps/@{centroid.y},{centroid.x},181m/data=!3m1!1e3?entry=ttu&g_ep=EgoyMDI0MTExNy4wIKXMDSoASAFQAw%3D%3D'
+        streetview = f'https://www.google.com/maps/@{centroid.y},{centroid.x},3a,75y,294.89h,90.12t/data=!3m7!1e1!3m5!1s1K-zJxC2RQnb8bAq_J-P9g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.11663989885830972%26panoid%3D1K-zJxC2RQnb8bAq_J-P9g%26yaw%3D294.8880644977118!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTExNy4wIKXMDSoASAFQAw%3D%3D'
+        maps_hyperlink = f'<a href={maps}>GoogleMaps</a>'
+        streetview_hyperlink = f'<a href={streetview}>StreetView</a>'
+        return maps_hyperlink
     
     igfrei = igfrei.to_crs(epsg=4326)
     igbebaut = igbebaut.to_crs(epsg=4326)

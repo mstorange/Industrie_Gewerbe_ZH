@@ -73,12 +73,19 @@ if submitted:
         else:
             return 'alt'
 
-    test = str(igbebaut[igbebaut['egrid']=='CH649676778551'].index)
-    st.write(test)
     
     gebproparz['alterskat'] = gebproparz['baujahr_gebaeude_kod'].apply(lambda x: altersstufe(x))
     
     parzellalter = dict(zip(gebproparz['egrid'].tolist(), gebproparz['alterskat'].tolist()))
+
+    # error ist bei parzellalter[x] wenn x == 'CH649676778551' --> vlt ist es ein Problem der dtypes
+    st.write(type(list(parzellalter.keys())[0]))
+    st.write(type(igbebaut['egrid'][0]))
+
+    if 'CH649676778551' in igbebaut['egrid'].tolist():
+        print('Die Parzelle CH649676778551 ist im igbebaut-DF')
+    else:
+        print('Die Parzelle CH649676778551 ist nicht im igbebaut-DF')
     
     igbebaut['alterskat'] = igbebaut['egrid'].apply(lambda x: parzellalter[x])
     

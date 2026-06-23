@@ -106,7 +106,7 @@ if submitted:
     # Farben dazufügen
     def farbe_alterskat(row):
         if row['alterskat'] == 'jung':
-            return "#5E7AC4" # grün
+            return "#94a9e0" # hellblau
         else:
             return "#2A3E85" # blau
     

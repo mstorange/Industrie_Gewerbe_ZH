@@ -352,7 +352,7 @@ if submitted:
          &nbsp; <b>Legende</b> <br>
          &nbsp; unbebaute Parzelle &nbsp; <i class="fa fa-square" style="color:#79AE6F"></i><br>
          &nbsp; bebaute Parzelle mit alten Gebäuden &nbsp; <i class="fa fa-square" style="color:#2A3E85"></i><br>
-         &nbsp; bebaute Parzellen mit neueren Gebäuden &nbsp; <i class="fa fa-square" style="color:#5E7AC4"></i><br>
+         &nbsp; bebaute Parzellen mit neueren Gebäuden &nbsp; <i class="fa fa-square" style="color:#94a9e0"></i><br>
     </div>
     {% endmacro %}
     '''

@@ -1,3 +1,5 @@
+# der code ist sehr wahrscheinlich aus dem 20_Infustrie_DeepNote_2026.ipynb
+
 import geopandas as gpd
 import pandas as pd
 import numpy as np

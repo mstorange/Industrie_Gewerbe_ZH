@@ -91,6 +91,9 @@ if submitted:
 
     
     igbebaut['alterskat'] = igbebaut['egrid'].apply(lambda x: parzellalter[x])
+
+    # optional: falls man nur die alten Parzellen anzeigen möchte
+    igbebaut = igbebaut[igbebaut['alterskat']=='alt'].reset_index(drop=True)
     
     # wichtige Spalten wählen
     igfrei = igfrei[['egrid', 'parzellenNR', 'flaeche_parzelle','flaeche_ohne_str', 'bfsnr', 'geometry', 'zid', 'zone', 'Gesamthoehe', 'hoehe_max', 'Firsthoehe_Max', 'Gewerbeanteil_Max', 'Vollgeschosse_Max', 'AZmax', 'BMZmax', 'Baumasse_max', 'guteklasse_anteile', 'guteklasse_anteile_pretty', 'GK_main']]
